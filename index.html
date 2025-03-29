@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Customer Support Assistant</h1>
+        
+        <form action="/" method="POST">
+            <label for="query">Enter Customer Query:</label>
+            <textarea id="query" name="query" rows="5" placeholder="Type your query here..." required></textarea>
+            
+            <button type="submit">Classify Query</button>
+        </form>
+
+        {% if category %}
+        <div class="result">
+            <h2>Predicted Category:</h2>
+            <p>{{ category }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
